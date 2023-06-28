@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project: Library</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <header>
+        <img src="./library.svg" alt="logo">
+        <h1>Library</h1>
+    </header>
+    <main>
+        <form action="" method="" class="add-book">
+            <h2>Add New Book</h2>
+            <ul>
+                <li>
+                    <label for="title">Title</label>
+                    <input type="text" id="title" name="title" required>
+                </li>
+                <li>
+                    <label for="author">Author</label>
+                    <input type="text" id="author" name="author" required>
+                </li>
+                <li>
+                    <label for="pages">Pages</label>
+                    <input type="number" id="pages" name="pages" required>
+                </li>
+                <li>
+                    <label for="read">Status</label>
+                    <select name="read" id="read" required>
+                        <option value="read">Read</option>
+                        <option value="reading">Reading</option>
+                        <option value="not-read" selected>Not Read</option>
+                    </select>
+                </li>
+                <button type="submit" id="add-book">Confirm</button>
+            </ul>
+        </form>
+        <h2>Book List</h2>
+        <section class="book-list">
+            <div class="card">
+                <h3>The Hobbit</h3>
+                <p>J.R.R. Tolkien</p>
+                <p class="pages">Pages: 295</p>
+                <p>
+                    <button id="toggle-status">Read</button>
+                    <button id="remove">Remove</button>
+                </p>
+            </div>
+        </section>
+    </main>
+    <footer>Created by <a href="https://github.com/Ngonidzashe-Zvenyika">Ngonidzashe Zvenyika</a></footer>
+</body>
+</html>
