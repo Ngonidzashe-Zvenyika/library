@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project: Library</title>
     <link rel="stylesheet" href="./style.css">
+    <script src="./script.js" defer></script>
 </head>
 <body>
     <header>
@@ -12,8 +13,8 @@
         <h1>Library</h1>
     </header>
     <main>
+        <button type="submit" id="add-book">+ Add Book</button>
         <form action="" method="" class="add-book">
-            <h2>Add New Book</h2>
             <ul>
                 <li>
                     <label for="title">Title</label>
@@ -28,8 +29,8 @@
                     <input type="number" id="pages" name="pages" required>
                 </li>
                 <li>
-                    <label for="read">Status</label>
-                    <select name="read" id="read" required>
+                    <label for="read-status">Status</label>
+                    <select name="read-status" id="read-status" required>
                         <option value="read">Read</option>
                         <option value="reading">Reading</option>
                         <option value="not-read" selected>Not Read</option>
@@ -41,8 +42,8 @@
         <h2>Book List</h2>
         <section class="book-list">
             <div class="card">
-                <h3>The Hobbit</h3>
-                <p>J.R.R. Tolkien</p>
+                <h3 class="title">The Hobbit</h3>
+                <p class="author">J.R.R. Tolkien</p>
                 <p class="pages">Pages: 295</p>
                 <p>
                     <button id="toggle-status">Read</button>
