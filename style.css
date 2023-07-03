@@ -7,6 +7,10 @@
 :root {
     font-size: 62.5%;
     font-family: Arial, sans-serif, system-ui, "Segoe UI", Roboto, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    --color-one: #fafafa;
+    --color-two: #26252d;
+    color: var(--color-one);
+    background-color: var(--color-one);
 }
 
 body {
@@ -26,7 +30,7 @@ header {
     align-items: center;
     gap: 1rem;
     padding: 1rem;
-    box-shadow: 0px 2px 5px black;
+    background-color: var(--color-two);
 }
 
 img {
@@ -45,15 +49,24 @@ main > button {
     outline: none;
     appearance: none;
     display: block;
+    color: var(--color-two);
     font-size: 1.5rem;
     font-weight: 600;
     padding: .5rem 1rem;
-    border: 2px solid black;
     margin: 2rem auto;
+    border: 2px solid var(--color-one);
+    outline: 2px solid var(--color-two);
+    background-color: var(--color-one);
+}
+
+main > button:hover {
+    color: var(--color-one);
+    background-color: var(--color-two);
 }
 
 h2 {
-    border-bottom: 3px solid black;
+    color: var(--color-two);
+    border-bottom: 2px solid var(--color-two);
 }
 
 form {
@@ -63,8 +76,9 @@ form {
     z-index: 1;
     width: 250px;
     padding: 2rem;
-    box-shadow: 2px 3px 5px black;
-    background-color: red;
+    border: 1px solid var(--color-one);
+    outline: 2px solid var(--color-two);
+    background-color: var(--color-two);
 }
 
 ul {
@@ -86,6 +100,7 @@ li:nth-child(4) {
 label {
     font-size: 1.3rem;
     display: block;
+    margin-bottom: .25rem;
 }
 
 input {
@@ -93,22 +108,28 @@ input {
     outline: none;
     appearance: none;
     display: block;
+    color: var(--color-two);
     width: 100%;
     padding: .5rem;
-    border: 2px solid black;
+    border: 2px solid var(--color-two);
+    outline: 1px solid var(--color-one);
+    background-color: var(--color-one);
 }
 
-input:focus,
+input:focus, 
 select:focus {
-    border: 2px solid blue;
+    border: 3px solid var(--color-two);
 }
 
 select {
     border: none;
     outline: none;
     display: block;
+    color: var(--color-two);
     margin-bottom: 1rem;
-    border: 2px solid black;
+    border: 2px solid var(--color-two);
+    outline: 1px solid var(--color-one);
+    background-color: var(--color-one);
 }
 
 select:hover,
@@ -121,9 +142,17 @@ ul button,
     border: none;
     outline: none;
     appearance: none;
+    color: var(--color-two);
+    font-size: 1.5rem;
+    font-weight: 600;
     width: 100%;
     padding: 1rem 0rem;
-    border: 2px solid black;
+    border: 2px solid var(--color-two);
+    outline: 1px solid var(--color-one);
+}
+
+ul button:hover {
+    border: 3px solid var(--color-two);
 }
 
 #overlay {
@@ -133,7 +162,8 @@ ul button,
     right: 0;
     left: 0;
     bottom: 0;
-    background-color: rgba(128, 0, 128, 0.5);
+    background-color: var(--color-two);
+    opacity: 0.6;
 }
 
 section {
@@ -141,7 +171,6 @@ section {
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 2rem;
     margin-top: 2rem;
-
 }
 
 .book-card {
@@ -149,7 +178,9 @@ section {
     gap: 1rem;
     min-height: 250px;
     padding: 1rem;
-    border: 2px solid black;
+    border: 2px solid var(--color-one);
+    outline: 2px solid var(--color-two);
+    background-color: var(--color-two);
 }
 
 h3 {
@@ -171,6 +202,7 @@ h3 {
 }
 
 footer{
+    color: var(--color-two);
     text-align: center;
     padding: 1rem;
 }

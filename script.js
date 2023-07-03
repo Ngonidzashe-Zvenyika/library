@@ -128,10 +128,10 @@ function toggleReadStatus() {
 // This function indicates the read-status by setting the background color of the relevant button;
 function setButtonColor(button) {
     if (button.innerText === "Read") {
-        button.style.backgroundColor = "green";
+        button.style.backgroundColor = "hsl(90, 100%, 20%)";
     } else if (button.innerText === "Reading") {
-        button.style.backgroundColor = "orange";
-    } else button.style.backgroundColor = "red";
+        button.style.backgroundColor = "hsl(30, 100%, 30%)";
+    } else button.style.backgroundColor = "hsl(0, 100%, 20%)";
 }
 
 // This function adds an event listener to a button on each card that will remove the book from the myLibrary array and update the display by calling displayBooks();
