@@ -22,7 +22,7 @@ body {
 
 header {
     display: flex;
-    justify-content: center;;
+    justify-content: center;
     align-items: center;
     gap: 1rem;
     padding: 1rem;
@@ -57,9 +57,10 @@ h2 {
 }
 
 form {
-    /* display: none; */
+    display: none;
     position: fixed;
     left: calc(50% - 125px);
+    z-index: 1;
     width: 250px;
     padding: 2rem;
     box-shadow: 2px 3px 5px black;
@@ -115,13 +116,24 @@ button:hover {
     cursor: pointer;
 }
 
-ul button {
+ul button,
+.book-card button {
     border: none;
     outline: none;
     appearance: none;
     width: 100%;
-    padding: 1rem;
+    padding: 1rem 0rem;
     border: 2px solid black;
+}
+
+#overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: rgba(128, 0, 128, 0.5);
 }
 
 section {
@@ -132,9 +144,10 @@ section {
 
 }
 
-.card {
+.book-card {
     display: grid;
     gap: 1rem;
+    min-height: 250px;
     padding: 1rem;
     border: 2px solid black;
 }
@@ -143,27 +156,18 @@ h3 {
     overflow-wrap: anywhere;
 }
 
-.card p {
+.book-card p {
     overflow-wrap: anywhere;
-}
-
-.card p:last-child {
-    align-self: end;
-    display: grid;
-    gap: 1rem;
 }
 
 .pages {
     font-size: 1.2rem;
 }
 
-.card button {
-    border: none;
-    outline: none;
-    appearance: none;
-    width: 100%;
-    padding: 1rem 0rem;
-    border: 2px solid black;
+.book-card p:last-child {
+    align-self: end;
+    display: grid;
+    gap: 1rem;
 }
 
 footer{
