@@ -13,8 +13,8 @@
         <h1>Library</h1>
     </header>
     <main>
-        <button type="submit" id="add-book">+ Add Book</button>
-        <form action="" method="" class="add-book">
+        <button type="button" class="display-form" name="display-form">+ Add Book</button>
+        <form action="" method="">
             <ul>
                 <li>
                     <label for="title">Title</label>
@@ -31,26 +31,17 @@
                 <li>
                     <label for="read-status">Status</label>
                     <select name="read-status" id="read-status" required>
-                        <option value="read">Read</option>
-                        <option value="reading">Reading</option>
-                        <option value="not-read" selected>Not Read</option>
+                        <option value="Read">Read</option>
+                        <option value="Reading">Reading</option>
+                        <option value="Not Read" selected>Not Read</option>
                     </select>
                 </li>
-                <button type="submit" id="add-book">Confirm</button>
+                <button type="submit" class="submit-form">Confirm</button>
             </ul>
         </form>
+        <div id="overlay"></div>
         <h2>Book List</h2>
-        <section class="book-list">
-            <div class="card">
-                <h3 class="title">The Hobbit</h3>
-                <p class="author">J.R.R. Tolkien</p>
-                <p class="pages">Pages: 295</p>
-                <p>
-                    <button id="toggle-status">Read</button>
-                    <button id="remove">Remove</button>
-                </p>
-            </div>
-        </section>
+        <section class="book-list"></section>
     </main>
     <footer>Created by <a href="https://github.com/Ngonidzashe-Zvenyika">Ngonidzashe Zvenyika</a></footer>
 </body>
