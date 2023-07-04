@@ -12,6 +12,15 @@ function Book(title, author, pages, readStatus) {
     this.readStatus = readStatus;
 }
 
+// This is a function to change the read status of a book object, it is set on the book constructor's prototype so that it may be accessed by all book objects;
+Book.prototype.toggleReadStatus = function() {
+    if (this.readStatus === "Not Read") {
+        this.readStatus = "Reading";
+    } else if (this.readStatus === "Reading") {
+        this.readStatus = "Read";
+    } else this.readStatus = "Not Read";
+}
+
 // This function displays the form pop-up and blurs the background;
 function displayForm() {
     form.style.display = "block";
@@ -63,7 +72,7 @@ function removeForm() {
     overlay.style.display = "none";
 }
 
-// This function iterates through the myLibrary array and displays each object on a card, it calls toggleReadStatus() and removeBook();
+// This function iterates through the myLibrary array and displays each object on a card, it calls setReadStatus() and removeBook();
 function displayBooks() {
     const bookList = document.querySelector(".book-list");
     bookList.replaceChildren();
@@ -103,24 +112,20 @@ function displayBooks() {
         bookList.appendChild(bookCard);
     });
 
-    toggleReadStatus();
+    setReadStatus();
     removeBook();
 }
 
-// This function adds an event listener to a button on each card that will change the read-status, it calls setButtonColor();
-function toggleReadStatus() {
+// This function adds an event listener to a button on each card that will change the read-status, it calls toggleReadStatus() and setButtonColor();
+function setReadStatus() {
     let buttons = document.querySelectorAll(".toggle-status");
-    for (const button of buttons) {
-        setButtonColor(button);
+    for (const button of buttons) { 
+        setButtonColor(button);      
         button.addEventListener("click", ()=> {
-            if (button.innerText === "Not Read") {
-                button.innerText = "Reading";
-            } else if (button.innerText === "Reading") {
-                button.innerText = "Read";
-            } else button.innerText = "Not Read";
+            const book = myLibrary[button.index];
+            book.toggleReadStatus();
+            button.innerText = book.readStatus;
             setButtonColor(button);
-
-            myLibrary[button.index].readStatus = button.innerText;
         })
     }
 }
@@ -146,7 +151,7 @@ function removeBook() {
 }
 
 
-// Main Program - includes event listeners that allow one to utilize the form to add books to list.
+// Main Program - includes event listeners that allow one to utilize the form and add books to list.
 for (const button of formButtons) {
     button.addEventListener("click", (event)=> {
         switch(true) {
