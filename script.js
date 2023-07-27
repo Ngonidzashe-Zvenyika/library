@@ -4,21 +4,21 @@ const formButtons = document.querySelectorAll("button");
 const overlay = document.getElementById("overlay");
 let myLibrary = [];
 
-// This is the book object constructor;
-function Book(title, author, pages, readStatus) {
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.readStatus = readStatus;
-}
-
-// This is a function to change the read status of a book object, it is set on the book constructor's prototype so that it may be accessed by all book objects;
-Book.prototype.toggleReadStatus = function() {
-    if (this.readStatus === "Not Read") {
-        this.readStatus = "Reading";
-    } else if (this.readStatus === "Reading") {
-        this.readStatus = "Read";
-    } else this.readStatus = "Not Read";
+// This class contains the book constructor and a method available to all book objects that will change the read status;
+class Book {
+    constructor(title, author, pages, readStatus) {
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.readStatus = readStatus;
+    }
+    toggleReadStatus() {
+        if (this.readStatus === "Not Read") {
+            this.readStatus = "Reading";
+        } else if (this.readStatus === "Reading") {
+            this.readStatus = "Read";
+        } else this.readStatus = "Not Read";
+    }
 }
 
 // This function displays the form pop-up and blurs the background;
