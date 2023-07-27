@@ -4,7 +4,7 @@ const formButtons = document.querySelectorAll("button");
 const overlay = document.getElementById("overlay");
 let myLibrary = [];
 
-// This class contains the book constructor and a method available to all book objects that will change the read status;
+// This class contains the book constructor and a method that is available to all book objects from the class but not duplicated within them, this method changes the read status;
 class Book {
     constructor(title, author, pages, readStatus) {
         this.title = title;
